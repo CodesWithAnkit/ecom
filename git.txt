@@ -3,3 +3,4 @@ git remote
 git status
 git add -A
 git commit -m 'massage of the life'
+git push origin master
