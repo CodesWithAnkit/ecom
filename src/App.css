@@ -7,3 +7,9 @@ a {
   text-decoration: none;
   color: black;
 }
+
+/* for removing the border property of the browser which are default valur for the all box component in the term of padding */
+
+* {
+  box-sizing: border-box;
+}
