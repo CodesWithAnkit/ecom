@@ -17,3 +17,12 @@ const userReducer = (state = INITIAL_STATE, action) => {
 };
 
 export default userReducer;
+
+const INITIAL_STATEA = {
+  currentUsers: null
+};
+
+const currentUsersReducers = (state = INITIAL_STATEA, action) => {
+  switch (action.type) {
+  }
+};
