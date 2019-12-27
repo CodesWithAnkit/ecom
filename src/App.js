@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
@@ -12,17 +12,7 @@ import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/user.action';
 import { selectCurrentUser } from './redux/user/user.selectors';
 
-class App extends React.Component {
-  /* constructor() {
-    super();
-
-    this.state = {
-      currentUser: null
-    };
-  } */
-
-  /*we don't need this constructor anymore after applying redux, but why I didn't unserstand */
-
+class App extends Component {
   unsubscribeFromAuth = null;
   // for signing the user
   componentDidMount() {
@@ -41,7 +31,6 @@ class App extends React.Component {
       setCurrentUser(userAuth);
     });
   }
-  // For signOut of the user
   componentWillUnmount() {
     this.unsubscribeFromAuth();
   }
@@ -50,14 +39,14 @@ class App extends React.Component {
       <div>
         <Header />
         <Switch>
-          <Route exact path='/' component={HomePage} />
-          <Route path='/shop' component={ShopPage} />
-          <Route path='/checkout' component={CheckoutPage} />
+          <Route exact path="/" component={HomePage} />
+          <Route path="/shop" component={ShopPage} />
+          <Route path="/checkout" component={CheckoutPage} />
           <Route
-            path='/signin'
+            path="/signin"
             render={() =>
               this.props.currentUser ? (
-                <Redirect to='/' />
+                <Redirect to="/" />
               ) : (
                 <SingInAndSignUpPage />
               )
@@ -77,7 +66,4 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);

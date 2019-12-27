@@ -1,4 +1,4 @@
-import { UserActionTypes } from "./user.types";
+import { UserActionTypes } from './user.types';
 const INITIAL_STATE = {
   currentUser: null
 };
@@ -18,11 +18,11 @@ const userReducer = (state = INITIAL_STATE, action) => {
 
 export default userReducer;
 
-const INITIAL_STATEA = {
-  currentUsers: null
-};
+// const INITIAL_STATEA = {
+//   currentUsers: null
+// };
 
-const currentUsersReducers = (state = INITIAL_STATEA, action) => {
-  switch (action.type) {
-  }
-};
+// const currentUsersReducers = (state = INITIAL_STATEA, action) => {
+//   switch (action.type) {
+//   }
+// };
